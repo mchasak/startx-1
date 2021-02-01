@@ -1,0 +1,20 @@
+// stylelint-disable declaration-no-important
+
+/* ==========================================================================
+Elements - Bg - Variables
+========================================================================== */
+$bg-colors: ();
+$bg-colors: map-merge((
+  'orange': $orange,
+  'brown': $livid-brown,
+  'black': $black,
+  'light': $vivid-sand,
+),
+$bg-colors);
+
+/* ==========================================================================
+Elements - Btn - Core
+========================================================================== */
+@each $color, $value in $bg-colors {
+  @include bg-variant('.bg-#{$color}', $value, true);
+}

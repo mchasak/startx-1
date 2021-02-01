@@ -1,0 +1,59 @@
+.footer {
+    display: grid;
+    justify-items: center;
+    text-align: center;
+    margin: 50px;
+
+    @include media-breakpoint-up(md) {
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr);  
+
+        &__item {
+            &--facebook {
+                grid-column: 1 / span 1;
+                grid-row: 1 / span 1;
+            }
+            &--instagram {
+                grid-column: 1 / span 1;
+                grid-row: 2 / span 1;
+            }
+            &--github {
+                grid-column: 2 / span 1;
+                grid-row: 1 / span 1;
+            }
+            &--stackoverflow {
+                grid-column: 2 / span 1;
+                grid-row: 2 / span 1;
+            }
+        }
+    }
+    @include media-breakpoint-up(xl) {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: none;
+
+        &__item {
+            &--facebook {
+                grid-column: 1 / span 1;
+                grid-row: 1 / span 1;
+            }
+            &--instagram {
+                grid-column: 2 / span 1;
+                grid-row: 1 / span 1;
+            }
+            &--github {
+                grid-column: 3 / span 1;
+                grid-row: 1 / span 1;
+            }
+            &--stackoverflow {
+                grid-column: 4 / span 1;
+                grid-row: 1 / span 1;
+            }
+        }
+    }
+}
+
+.svg {
+    width: 40px;
+    height: 40px;
+    margin: 20px
+}

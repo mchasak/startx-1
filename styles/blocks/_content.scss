@@ -1,0 +1,11 @@
+.content {
+    text-align: center;
+    margin: 0 50px;
+    padding: 0 50px;
+    padding-bottom: 50px;
+    @include media-breakpoint-up(lg) {
+        text-align: left;
+        padding: 30px;
+        
+    }
+}
