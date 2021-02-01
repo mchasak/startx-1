@@ -1,0 +1,50 @@
+{
+  "name": "startx",
+  "version": "1.1.1",
+  "description": "HTML Starter Pack for fast developing.",
+  "main": "gulpfile.js",
+  "scripts": {
+    "lint:styles": "stylelint --fix \"styles/**/*.scss\"",
+    "git:add": "git add -A"
+  },
+  "pre-commit": [
+    "lint:styles",
+    "git:add"
+  ],
+  "author": "devx",
+  "license": "ISC",
+  "devDependencies": {
+    "bootstrap": "4.5.0",
+    "browser-sync": "2.26.5",
+    "del": "4.1.1",
+    "gulp": "4.0.2",
+    "gulp-autoprefixer": "6.1.0",
+    "gulp-cache": "1.1.1",
+    "gulp-concat": "2.6.1",
+    "gulp-declare": "0.3.0",
+    "gulp-filter": "5.1.0",
+    "gulp-hb": "8.0.0",
+    "gulp-imagemin": "5.0.3",
+    "gulp-line-ending-corrector": "1.0.3",
+    "gulp-merge-media-queries": "0.2.1",
+    "gulp-plumber": "1.2.1",
+    "gulp-rename": "1.4.0",
+    "gulp-replace": "1.0.0",
+    "gulp-sass": "4.0.2",
+    "gulp-sort": "2.0.0",
+    "gulp-sourcemaps": "2.6.5",
+    "gulp-svg-sprite": "1.5.0",
+    "gulp-svgmin": "2.2.0",
+    "gulp-uglify": "3.0.2",
+    "gulp-uglifycss": "1.1.0",
+    "gulp-wrap": "0.15.0",
+    "handlebars-helpers": "0.10.0",
+    "normalize-scss": "7.0.1",
+    "pre-commit": "^1.2.2",
+    "stylelint": "^13.2.1",
+    "stylelint-config-rational-order": "^0.1.2",
+    "stylelint-config-sass-guidelines": "^7.0.0",
+    "stylelint-order": "^4.0.0",
+    "svgxuse": "^1.2.6"
+  }
+}

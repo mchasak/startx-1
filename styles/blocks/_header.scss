@@ -1,0 +1,112 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: rgba(0, 0, 0, .95);
+    color: white;
+    @include media-breakpoint-up(md) {
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+    } 
+    
+    &__logo {
+        margin-right: auto;
+        padding: 10px;
+        height: 50px;
+    }
+
+    &__links {
+        display: none;
+        width: 100%; 
+        @include media-breakpoint-up(md) {
+           display: flex;
+           width: auto;
+        }
+    }
+
+    &__links.active {
+        display: flex;
+    }
+
+    &__links ul {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        @include media-breakpoint-up(md) {
+            display: flex;
+            flex-direction: row;
+        }
+    }
+
+    &__links li {
+        list-style: none;
+        text-align: center;
+    }
+
+    &__links li a {
+        text-decoration: none;
+        color: white;
+        padding: 8px;
+        display: block;
+        @include media-breakpoint-up(md) {
+            padding: 15px;
+        }
+    }
+
+    &__links li:hover {
+        background-color: #555;
+    }
+
+    &__btn {
+        display: none;
+        color: white;
+        padding: 8px;
+        justify-content: center;
+        width: 100%;
+        @include media-breakpoint-up(md) {
+            width: 12%;
+            padding: 15px;
+            display: flex;
+        }
+        @include media-breakpoint-up(lg) {
+            width: 8%;
+        }
+    }
+
+    &__btn.active {
+        display: flex;
+    }
+}
+
+.toggle-button {
+    position: absolute;
+    top: 11px;
+    right: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    @include media-breakpoint-up(md) {
+        display: none;
+    }
+
+    &__bar {
+        height: 3px;
+        width: 100%;
+        background-color: #fff;
+        border-radius: 10px;
+    }
+}

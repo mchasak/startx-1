@@ -1,0 +1,22 @@
+// Primary
+
+
+// Others
+$raven: #6c757d;
+$vivid-sand: #F4F4F4;
+$black: #000000;
+$orange: #FC6C32;
+$livid-brown: #2E2B2B;
+
+$theme-colors: map-merge(
+                (
+                        "primary": $orange,
+                        "black": $black,
+                        "light": $light,
+                ),
+                $theme-colors
+);
+
+
+// Global
+$body-color: $black;

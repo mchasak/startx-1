@@ -1,0 +1,54 @@
+.styleguide {
+  margin: 50px 0;
+  @include media-breakpoint-up(md) {
+    margin: 90px 0;
+  }
+  &__d-block {
+    display: block;
+  }
+  &__mb {
+    margin-bottom: 20px;
+  }
+  &__display {
+    font-size: 32px;
+    line-height: 32px;
+  }
+  &__title {
+    margin-bottom: 30px;
+    color: rgba($black, 0.5);
+    font-size: 16px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    @include media-breakpoint-up(md) {
+      margin-bottom: 60px;
+      letter-spacing: 6px;
+    }
+  }
+  &__hr {
+    margin: 40px 0;
+    border-color: rgba($black, 0.1);
+    border-width: 1px;
+    border-top: 0;
+    @include media-breakpoint-up(md) {
+      margin: 80px 0;
+    }
+    @include media-breakpoint-up(lg) {
+      margin: 140px 0;
+    }
+  }
+  &__color-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 60px;
+    color: $white;
+    font-weight: 300;
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    &--text-black {
+      color: $black;
+    }
+  }
+}

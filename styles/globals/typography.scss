@@ -1,0 +1,149 @@
+// stylelint-disable declaration-no-important, selector-list-comma-newline-after
+
+/* ==========================================================================
+Typography - Variables
+========================================================================== */
+$font-family-sans-serif: serif;
+$font-family-base: 'Space Grotesk', sans-serif;
+$headings-font-family: 'bebas-neue-pro-expanded', sans-serif;
+$heading-color: $body-color;
+
+$font-size-base: 0.875rem;
+$font-size-base-md: 1.125rem;
+
+// Heading sizes
+$h1-font-weight: 800;
+$h1-font-size: 60px;
+$h1-font-size-md: 130px;
+$h1-font-size-lg: 190px;
+$h1-line-height: 50px;
+$h1-line-height-md: 110px;
+$h1-line-height-lg: 150px;
+$h1-margin-bottom: 35px;
+$h1-margin-bottom-md: 45px;
+$h1-margin-bottom-lg: 55px;
+
+$h2-font-weight: 800;
+$h2-font-size: 40px;
+$h2-font-size-md: 90px;
+$h2-font-size-lg: 140px;
+$h2-line-height: 40px;
+$h2-line-height-md: 98px;
+$h2-line-height-lg: 150px;
+$h2-margin-bottom: 18px;
+$h2-margin-bottom-md: 50px;
+$h2-margin-bottom-lg: 80px;
+
+$h3-font-weight: 800;
+$h3-font-size: 40px;
+$h3-font-size-md: 90px;
+$h3-font-size-lg: 110px;
+$h3-line-height: 40px;
+$h3-line-height-md: 98px;
+$h3-line-height-lg: 110px;
+$h3-margin-bottom: 18px;
+$h3-margin-bottom-md: 50px;
+$h3-margin-bottom-lg: 76px;
+
+$h4-font-weight: 800;
+$h4-font-size: 25px;
+$h4-font-size-md: 60px;
+$h4-font-size-lg: $h4-font-size-md;
+$h4-line-height: 45px;
+$h4-line-height-md: 60px;
+$h4-line-height-lg: 60px;
+$h4-margin-bottom: 35px;
+$h4-margin-bottom-md: 45px;
+$h4-margin-bottom-lg: 55px;
+
+$h5-font-weight: 800;
+$h5-font-size: 25px;
+$h5-font-size-md: 60px;
+$h5-font-size-lg: $h5-font-size-md;
+$h5-line-height: 45px;
+$h5-line-height-md: 60px;
+$h5-line-height-lg: 60px;
+$h5-margin-bottom: 35px;
+$h5-margin-bottom-md: 45px;
+$h5-margin-bottom-lg: 55px;
+
+$h6-font-weight: 800;
+$h6-font-size: 25px;
+$h6-font-size-md: 60px;
+$h6-font-size-lg: $h6-font-size-md;
+$h6-line-height: 45px;
+$h6-line-height-md: 60px;
+$h6-line-height-lg: 60px;
+$h6-margin-bottom: 35px;
+$h6-margin-bottom-md: 45px;
+$h6-margin-bottom-lg: 55px;
+
+/* ==========================================================================
+Typography - Mixins
+========================================================================== */
+@mixin heading-size($font-weight, $font-size, $line-height, $font-size-md, $line-height-md, $font-size-lg, $line-height-lg, $margin-bottom, $margin-bottom-md, $margin-bottom-lg) {
+  margin-bottom: $margin-bottom;
+  font-weight: 800;
+  font-size: $font-size;
+  line-height: $line-height;
+  @include media-breakpoint-up(md) {
+    margin-bottom: $margin-bottom-md;
+    font-size: $font-size-md;
+    line-height: $line-height-md;
+  }
+  @include media-breakpoint-up(lg) {
+    margin-bottom: $margin-bottom-lg;
+    font-size: $font-size-lg;
+    line-height: $line-height-lg;
+  }
+}
+
+/* ==========================================================================
+Typography - Heading
+========================================================================== */
+h1, .h1 {
+  @include heading-size($h1-font-weight, $h1-font-size, $h1-line-height, $h1-font-size-md, $h1-line-height-md, $h1-font-size-lg, $h1-line-height-lg, $h1-margin-bottom, $h1-margin-bottom-md, $h1-margin-bottom-lg);
+}
+
+h2, .h2 {
+  @include heading-size($h2-font-weight, $h2-font-size, $h2-line-height, $h2-font-size-md, $h2-line-height-md, $h2-font-size-lg, $h2-line-height-lg, $h2-margin-bottom, $h2-margin-bottom-md, $h2-margin-bottom-lg);
+}
+
+h3, .h3 {
+  @include heading-size($h3-font-weight, $h3-font-size, $h3-line-height, $h3-font-size-md, $h3-line-height-md, $h3-font-size-lg, $h3-line-height-lg, $h3-margin-bottom, $h3-margin-bottom-md, $h3-margin-bottom-lg);
+}
+
+h4, .h4 {
+  @include heading-size($h4-font-weight, $h4-font-size, $h4-line-height, $h4-font-size-md, $h4-line-height-md, $h4-font-size-lg, $h4-line-height-lg, $h4-margin-bottom, $h4-margin-bottom-md, $h4-margin-bottom-lg);
+}
+
+h5, .h5 {
+  @include heading-size($h5-font-weight, $h5-font-size, $h5-line-height, $h5-font-size-md, $h5-line-height-md, $h5-font-size-lg, $h5-line-height-lg, $h5-margin-bottom, $h5-margin-bottom-md, $h5-margin-bottom-lg);
+}
+
+h6, .h6 {
+  @include heading-size($h6-font-weight, $h6-font-size, $h6-line-height, $h6-font-size-md, $h6-line-height-md, $h6-font-size-lg, $h6-line-height-lg, $h6-margin-bottom, $h6-margin-bottom-md, $h6-margin-bottom-lg);
+}
+
+/* ==========================================================================
+Typography - Displays
+========================================================================== */
+.display-1 {
+  margin-bottom: 15px;
+  font-size: 45px;
+  line-height: 50px;
+  @include media-breakpoint-up(md) {
+    margin-bottom: 18px;
+    font-size: 60px;
+    line-height: 65px;
+  }
+}
+
+/* ==========================================================================
+Typography - Emphasis
+========================================================================== */
+small,
+.small {
+  @include font-size($small-font-size);
+  font-weight: $font-weight-normal;
+}

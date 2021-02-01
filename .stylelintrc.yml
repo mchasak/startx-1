@@ -1,0 +1,77 @@
+extends:
+ - "stylelint-config-sass-guidelines"
+ - "stylelint-config-rational-order"
+plugins:
+ - "stylelint-order"
+ - "stylelint-config-rational-order/plugin"
+rules:
+ "unit-no-unknown": true
+ "selector-pseudo-class-no-unknown": true
+ "selector-pseudo-element-no-unknown": true
+ "selector-type-no-unknown": true
+ "media-feature-name-no-unknown": true
+ "comment-no-empty": true
+ "no-duplicate-at-import-rules": true
+ "no-duplicate-selectors": true
+ "no-empty-source": true
+ "color-no-hex": true
+ "declaration-no-important": true
+ "declaration-block-no-redundant-longhand-properties": true
+ "selector-max-empty-lines": 1
+ "font-weight-notation": numeric
+ "number-leading-zero": always
+ "number-no-trailing-zeros": true
+ "string-quotes": single
+ "length-zero-no-unit": true
+ "unit-case": lower
+ "value-keyword-case": lower
+ "value-list-comma-newline-after": always
+ "value-list-comma-space-after": always
+ "value-list-max-empty-lines": 0
+ "property-case": lower
+ "declaration-bang-space-after": never
+ "declaration-bang-space-before": always
+ "declaration-colon-space-after": always
+ "declaration-colon-space-before": never
+ "declaration-empty-line-before": never
+ "declaration-block-semicolon-newline-after": always
+ "declaration-block-semicolon-space-before": never
+ "declaration-block-trailing-semicolon": always
+ "block-closing-brace-empty-line-before": never
+ "block-closing-brace-newline-after":
+  - always
+  - ignoreAtRules:
+     - "if"
+     - "else"
+ "block-closing-brace-newline-before": always
+ "block-opening-brace-newline-after": always
+ "selector-attribute-brackets-space-inside": never
+ "selector-attribute-operator-space-after": never
+ "selector-attribute-operator-space-before": never
+ "selector-attribute-quotes": always
+ "selector-combinator-space-after": always
+ "selector-combinator-space-before": always
+ "selector-pseudo-class-case": lower
+ "selector-pseudo-class-parentheses-space-inside": never
+ "selector-pseudo-element-case": lower
+ "selector-pseudo-element-colon-notation": double
+ "selector-type-case": lower
+ "selector-list-comma-newline-after": always
+ "comment-whitespace-inside": always
+ indentation: 2
+ linebreaks: unix
+ "max-empty-lines": 2
+ "no-eol-whitespace": true
+ "no-empty-first-line": true
+ "rule-empty-line-before":
+  - always
+  - ignore:
+     - "after-comment"
+     - "first-nested"
+     - "inside-block"
+ "max-nesting-depth":
+  - 5
+  - ignore:
+     - "blockless-at-rules"
+     - "pseudo-classes"
+ "selector-class-pattern": ".*"

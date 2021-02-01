@@ -1,0 +1,149 @@
+// stylelint-disable selector-no-qualifying-type
+
+/* ==========================================================================
+Elements - Btn - Variables
+========================================================================== */
+$btn-font-size: $input-btn-font-size !default;
+$btn-line-height: $input-btn-line-height !default;
+
+$btn-box-shadow: inset 0 1px 0 rgba($white, 0.15), 0 1px 1px rgba($black, 0.075) !default;
+$btn-focus-box-shadow: $input-btn-focus-box-shadow !default;
+$btn-active-box-shadow: inset 0 3px 5px rgba($black, 0.125) !default;
+
+$btn-block-spacing-y: 0.5rem !default;
+
+$btn-colors: ();
+// stylelint-disable-next-line scss/dollar-variable-default
+$btn-colors: map-merge((
+  'orange': $orange,
+  'black': $black,
+  'light': $light,
+),
+$btn-colors);
+
+/* ==========================================================================
+Elements - Btn - Basic styles
+========================================================================== */
+.btn {
+  @include transition(color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out);
+  display: inline-block;
+  padding: 28px 55px;
+  color: $body-color;
+  font-size: 20px;
+  font-family: $headings-font-family;
+  line-height: 20px;
+  white-space: null;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  vertical-align: middle;
+  background-color: transparent;
+  border: 1px solid transparent;
+  user-select: none;
+  
+  &--small {
+    @include transition(color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out);
+    display: inline-block;
+    padding: 10px 10px;
+    color: $body-color;
+    font-size: 20px;
+    font-family: $headings-font-family;
+    line-height: 20px;
+    white-space: null;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    vertical-align: middle;
+    background-color: transparent;
+    border: 1px solid transparent;
+    user-select: none;
+  }
+
+  @include hover() {
+    color: $orange;
+    text-decoration: none;
+  }
+
+  @include media-breakpoint-up(md) {
+    padding: 40px 70px;
+    font-size: 30px;
+    line-height: 30px;
+  }
+
+  &:focus,
+  &.focus {
+    outline: 0;
+    box-shadow: $btn-focus-box-shadow;
+  }
+
+  // Disabled comes first so active can properly restyle
+  &.btn--disabled,
+  &:disabled {
+    @include box-shadow(none);
+    opacity: 0.65;
+  }
+
+  &:not(:disabled):not(.disabled) {
+    cursor: pointer;
+
+    &:active,
+    &.active {
+      @include box-shadow($btn-active-box-shadow);
+
+      &:focus {
+        @include box-shadow($btn-focus-box-shadow, $btn-active-box-shadow);
+      }
+    }
+  }
+}
+
+// Future-proof disabling of clicks on `<a>` elements
+a.btn.btn--disabled,
+fieldset:disabled a.btn {
+  pointer-events: none;
+}
+
+
+/* ==========================================================================
+Elements - Btn - Alternate buttons full
+========================================================================== */
+@each $color, $value in $btn-colors {
+  .btn--#{$color} {
+    @include button-variant($value, $value);
+  }
+}
+
+/* ==========================================================================
+Elements - Btn - Alternate buttons outline
+========================================================================== */
+@each $color, $value in $btn-colors {
+  .btn--outline-#{$color} {
+    @include button-outline-variant($value);
+  }
+}
+
+
+/* ==========================================================================
+Elements - Btn - Make a button look and behave like a link
+========================================================================== */
+.btn--link {
+  color: $primary;
+  font-weight: 400;
+  text-decoration: none;
+
+  @include hover() {
+    color: darken($primary, 15%);
+    text-decoration: underline;
+  }
+
+  &:focus,
+  &.focus {
+    text-decoration: underline;
+  }
+
+  &:disabled,
+  &.btn--disabled {
+    color: $raven;
+    pointer-events: none;
+  }
+}
